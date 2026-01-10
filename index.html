@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KnightShadows - Open Source for a Better Digital World</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <svg
+            class="logo"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M35 20 L45 30 L50 25 L55 30 L65 20 L60 35 L65 40 L50 55 L35 40 L40 35 Z M40 50 L30 50 L30 70 L40 75 M60 50 L70 50 L70 70 L60 75 M45 60 L50 80 L55 60"
+              fill="#00cc66"
+              stroke="#003320"
+              stroke-width="2"
+            />
+          </svg>
+          <span class="brand-name">KnightShadows</span>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="values.html">Our Values</a></li>
+          <li><a href="contribute.html">Get Involved</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              onclick="toggleTheme()"
+              aria-label="Toggle dark mode"
+            >
+              🌙
+            </button>
+          </li>
+          <li><a href="donate.html" class="btn-donate">❤️ Donate</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          Building <span class="highlight">Open Source</span> Solutions for
+          Everyone
+        </h1>
+        <p>
+          KnightShadows is a nonprofit organization dedicated to creating free,
+          accessible, and secure digital tools that empower communities
+          worldwide. Join us in our mission to make technology work for people,
+          not profit.
+        </p>
+        <div class="cta-buttons">
+          <a href="contribute.html" class="btn btn-primary">Contribute</a>
+          <a href="projects.html" class="btn btn-secondary">Explore Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission">
+      <div class="mission-container">
+        <h2>Our Mission</h2>
+        <p>
+          We believe technology should be open, transparent, and accessible to
+          all. KnightShadows develops free and open-source software that
+          protects privacy, promotes digital literacy, and builds a more
+          equitable internet for everyone.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Active Contributors</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Open Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">5M+</div>
+            <div class="stat-label">Users Worldwide</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Open Source</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-projects">
+      <div class="projects-container">
+        <div class="section-header">
+          <h2>Featured Projects</h2>
+          <p>Check out some of our most impactful open source tools</p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-icon">🛡️</div>
+            <h3>Eclipse Browser</h3>
+            <p>
+              Privacy-focused web browser that blocks trackers, protects your
+              data, and gives you control.
+            </p>
+            <a href="projects.html#securen" class="btn btn-secondary"
+              >Learn More →</a
+            >
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon">📧</div>
+            <h3>QubesMail</h3>
+            <p>
+              Security-first email system using AI agents to rate threats and open links safely in isolated environments.
+            </p>
+            <a href="projects.html#learnhub" class="btn btn-secondary"
+              >Learn More →</a
+            >
+          </div>
+
+          <!-- <div class="project-card">
+            <div class="project-icon">🔐</div>
+            <h3>CryptoVault</h3>
+            <p>
+              End-to-end encrypted file storage ensuring your data remains
+              private and secure.
+            </p>
+            <a href="projects.html#cryptovault" class="btn btn-secondary"
+              >Learn More →</a
+            >
+          </div> -->
+        </div>
+        <div class="text-center" style="margin-top: 3rem">
+          <a href="projects.html" class="btn btn-primary">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-preview">
+      <div class="values-container">
+        <div class="section-header">
+          <h2>Our Core Values</h2>
+          <p>The principles that guide everything we do</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🌐</div>
+            <h3>Open & Transparent</h3>
+            <p>
+              All our code is open source and publicly available. We believe in
+              radical transparency.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>
+              We build tools that respect user privacy by default. No tracking,
+              no data selling.
+            </p>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top: 2rem">
+          <a href="values.html" class="btn btn-secondary">See All Values</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribute-cta">
+      <div class="contribute-container">
+        <h2>Ready to Make a Difference?</h2>
+        <p>
+          Join thousands of contributors building a better digital world. No
+          experience necessary!
+        </p>
+        <div class="cta-buttons">
+          <a href="contribute.html" class="btn btn-primary">Get Started</a>
+          <a href="about.html" class="btn btn-secondary">Learn About Us</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section footer-about">
+          <h4>KnightShadows</h4>
+          <p>
+            A nonprofit organization building free and open-source software for
+            a more equitable digital world.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://github.com/KnightShadows"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://linkedin.com/company/knightshadows"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://discord.gg/7SVve8wkm"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+            >
+              <i class="fa-brands fa-discord"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/1Bse5YnJ8d/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="projects.html">All Projects</a></li>
+            <li><a href="projects.html#securen">Eclipse Browser</a></li>
+            <li><a href="projects.html#learnhub">LearnHub Platform</a></li>
+            <li><a href="projects.html#cryptovault">CryptoVault</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="contribute.html">Contribute Code</a></li>
+            <li><a href="contribute.html">Join Community</a></li>
+            <li><a href="contribute.html">Documentation</a></li>
+            <li><a href="contribute.html">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html">Mission</a></li>
+            <li><a href="about.html">Team</a></li>
+            <li><a href="about.html">Blog</a></li>
+            <li><a href="about.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KnightShadows. Licensed under CC BY-SA 4.0</p>
+        <p>KnightShadows is a registered 501(c)(3) nonprofit organization</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

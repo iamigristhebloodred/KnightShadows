@@ -1,0 +1,1481 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Common Components */
+.text-center {
+    text-align: center;
+}
+
+.active {
+    color: #00cc66 !important;
+    font-weight: 600;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00cc66;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00cc66;
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid #00cc66;
+    color: #333;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+    background: #00cc66;
+    color: #fff;
+}
+
+.btn-donate {
+    background: #ff6b6b;
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-donate:hover {
+    background: #ff5252;
+    color: #fff;
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #00cc66;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #00b359;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 204, 102, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #00cc66;
+    border: 2px solid #00cc66;
+}
+
+.btn-secondary:hover {
+    background: #00cc66;
+    color: #fff;
+}
+
+/* Home Page Hero */
+.hero {
+    margin-top: 80px;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.hero .highlight {
+    color: #00cc66;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Page Hero (for other pages) */
+.page-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #00cc66 0%, #00b359 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Mission Section */
+.mission {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.mission-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.mission p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #00cc66;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Featured Projects */
+.featured-projects {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border-left: 4px solid #00cc66;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.project-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+.tag {
+    background: #e8f5e9;
+    color: #00cc66;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Values Preview */
+.values-preview {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #00cc66 0%, #00b359 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+    color: #fff;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Values Detailed Page */
+.values-detailed .value-card.detailed {
+    text-align: left;
+    padding: 2.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.values-detailed .value-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.value-points {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.value-points li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.values-in-action {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.action-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Contribute Page */
+.contribute {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.contribute-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contribute-card {
+    background: #fff;
+    border: 2px solid #e8f5e9;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.contribute-card:hover {
+    border-color: #00cc66;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contribute-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contribute-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.contribute-list li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.contribute-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contribute-steps {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: #00cc66;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+}
+
+.financial-support {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.support-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* About Page */
+.about-story {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.story-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.milestones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.milestone {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.year {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00cc66;
+    margin-bottom: 0.5rem;
+}
+
+.team-section {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    background: #e8f5e9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+}
+
+.member-role {
+    color: #00cc66;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.member-bio {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.team-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+    color: #2d5c3d;
+}
+
+.governance {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.governance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.governance-card {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.contact-section {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-method {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* CTA Sections */
+.contribute-cta, .cta-section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contribute-cta {
+    background: linear-gradient(135deg, #00cc66 0%, #00b359 100%);
+    color: #fff;
+}
+
+.contribute-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contribute-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.project-stats {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 3rem 2rem 1.5rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: #00cc66;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #00cc66;
+}
+
+.footer-about {
+    max-width: 300px;
+}
+
+.footer-about p {
+    color: #ccc;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 204, 102, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: #00cc66;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #999;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #0a0a0a;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body.dark-mode nav a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .theme-toggle {
+    color: #e0e0e0;
+    border-color: #00cc66;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a2a1a 100%);
+}
+
+body.dark-mode .hero h1 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .hero p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .mission {
+    background: #0f0f0f;
+}
+
+body.dark-mode .mission h2 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .mission p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .stat-label {
+    color: #999;
+}
+
+body.dark-mode .featured-projects,
+body.dark-mode .projects {
+    background: #0a0a0a;
+}
+
+body.dark-mode .section-header h2 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .section-header p {
+    color: #999;
+}
+
+body.dark-mode .project-card {
+    background: #1a1a1a;
+    border-left-color: #00cc66;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .project-card h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .project-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .tag {
+    background: rgba(0, 204, 102, 0.2);
+    color: #00ff88;
+}
+
+body.dark-mode .values-preview,
+body.dark-mode .values-detailed {
+    background: #0f0f0f;
+}
+
+body.dark-mode .value-card h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .value-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .values-detailed .value-card.detailed {
+    border-color: #333;
+}
+
+body.dark-mode .values-in-action {
+    background: #0a0a0a;
+}
+
+body.dark-mode .action-card {
+    background: #1a1a1a;
+}
+
+body.dark-mode .contribute {
+    background: #0f0f0f;
+}
+
+body.dark-mode .contribute-card {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+body.dark-mode .contribute-steps {
+    background: #0a0a0a;
+}
+
+body.dark-mode .step {
+    background: #1a1a1a;
+}
+
+body.dark-mode .financial-support {
+    background: #0f0f0f;
+}
+
+body.dark-mode .support-card {
+    background: #1a1a1a;
+}
+
+body.dark-mode .about-story {
+    background: #0f0f0f;
+}
+
+body.dark-mode .story-content p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .milestone {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+body.dark-mode .team-section {
+    background: #0a0a0a;
+}
+
+body.dark-mode .team-member {
+    background: #1a1a1a;
+}
+
+body.dark-mode .team-note {
+    background: #1a2a1a;
+    color: #b0f0b0;
+}
+
+body.dark-mode .governance {
+    background: #0f0f0f;
+}
+
+body.dark-mode .governance-card {
+    background: #1a1a1a;
+}
+
+body.dark-mode .contact-section {
+    background: #0a0a0a;
+}
+
+body.dark-mode .contact-method {
+    background: #1a1a1a;
+}
+
+body.dark-mode .project-stats {
+    background: #0a0a0a;
+}
+
+body.dark-mode .stat-card {
+    background: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .stats,
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .project-links,
+    .contribute-links {
+        flex-direction: column;
+    }
+}
+
+/* Add to existing style.css */
+
+/* Donation page specific styles */
+.donation-hero {
+    margin-top: 80px;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #00cc66 0%, #00b359 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.donation-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.donation-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.donation-methods {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.donation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.method-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    border-color: #00cc66;
+    box-shadow: 0 10px 30px rgba(0, 204, 102, 0.1);
+}
+
+.method-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.method-card h3 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.method-card p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.qr-container {
+    margin: 2rem auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.qr-code {
+    width: 220px;
+    height: 220px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.qr-placeholder {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #e0e0e0 25%, #f0f0f0 25%, #f0f0f0 50%, #e0e0e0 50%, #e0e0e0 75%, #f0f0f0 75%, #f0f0f0);
+    background-size: 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.upi-id {
+    background: #e8f5e9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #00cc66;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.copy-btn {
+    background: #00cc66;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: #00b359;
+}
+
+.bank-details {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.bank-details h4 {
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+    width: 200px;
+    font-weight: 600;
+    color: #555;
+}
+
+.detail-value {
+    flex: 1;
+    color: #333;
+    font-family: monospace;
+}
+
+.donation-impact {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.impact-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.impact-card h4 {
+    color: #00cc66;
+    margin-bottom: 0.5rem;
+}
+
+.impact-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.tax-benefits {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.benefits-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.benefits-list li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.benefits-list li:before {
+    content: "✓";
+    color: #00cc66;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.donation-faq {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    color: #666;
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 500px;
+}
+
+.faq-toggle {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.copy-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: #00cc66;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateX(150%);
+    transition: transform 0.3s;
+    z-index: 1001;
+}
+
+.copy-notification.show {
+    transform: translateX(0);
+}
+
+/* Dark mode for donation page */
+body.dark-mode .donation-methods,
+body.dark-mode .tax-benefits {
+    background: #0f0f0f;
+}
+
+body.dark-mode .method-card {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+body.dark-mode .method-card h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .method-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .qr-container {
+    background: #1a1a1a;
+}
+
+body.dark-mode .qr-code {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+body.dark-mode .qr-placeholder {
+    background: linear-gradient(45deg, #333 25%, #444 25%, #444 50%, #333 50%, #333 75%, #444 75%, #444);
+    color: #999;
+}
+
+body.dark-mode .upi-id {
+    background: #1a2a1a;
+    color: #00ff88;
+}
+
+body.dark-mode .bank-details {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+body.dark-mode .bank-details h4 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .detail-label {
+    color: #999;
+}
+
+body.dark-mode .detail-value {
+    color: #e0e0e0;
+}
+
+body.dark-mode .donation-impact {
+    background: #0a0a0a;
+}
+
+body.dark-mode .impact-card {
+    background: #1a1a1a;
+}
+
+body.dark-mode .impact-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .benefits-list li {
+    color: #e0e0e0;
+}
+
+body.dark-mode .donation-faq {
+    background: #0a0a0a;
+}
+
+body.dark-mode .faq-item {
+    background: #1a1a1a;
+}
+
+body.dark-mode .faq-question {
+    color: #f0f0f0;
+}
+
+body.dark-mode .faq-answer {
+    color: #b0b0b0;
+}
+
+@media (max-width: 768px) {
+    .donation-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-label {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .qr-code {
+        width: 180px;
+        height: 180px;
+    }
+}
+/* Dark mode for simple donation page */
+body.dark-mode .donation-page {
+    background: #0a0a0a;
+}
+
+body.dark-mode .donation-container {
+    background: #1a1a1a;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .donation-header h1 {
+    color: #00ff88;
+}
+
+body.dark-mode .donation-header p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .qr-section {
+    background: #0f0f0f;
+}
+
+body.dark-mode .qr-code {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+body.dark-mode .qr-placeholder {
+    background: linear-gradient(45deg, #333 25%, #444 25%, #444 50%, #333 50%, #333 75%, #444 75%, #444);
+    color: #999;
+}
+
+body.dark-mode .upi-details {
+    background: #1a2a1a;
+}
+
+body.dark-mode .upi-id {
+    color: #00ff88;
+}
+
+body.dark-mode .instructions {
+    background: #0f0f0f;
+}
+
+body.dark-mode .instructions h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .instructions li {
+    color: #b0b0b0;
+}
+
+body.dark-mode .thank-you {
+    color: #999;
+}
+
+/* Container & Base Style */
+.social-links {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    font-size: 1.4rem;
+    color: #555; /* Neutral gray by default */
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+}
+
+/* Hover Lift Effect */
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Individual Brand Colors on Hover */
+.fa-github:hover { color: #24292e; }    /* GitHub Dark */
+.fa-linkedin:hover { color: #0A66C2; }  /* LinkedIn Blue */
+.fa-discord:hover { color: #5865F2; }   /* Discord Blurple */
+.fa-facebook-f:hover { color: #1877F2; } /* Facebook/Meta Blue */
