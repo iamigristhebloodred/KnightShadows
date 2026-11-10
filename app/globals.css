@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #202124;
+  --accent-green: #00ff00;
+  --accent-cyan: #4285F4;
+  --accent-crimson: #EA4335;
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --sidebar-width: 60px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent-green: var(--accent-green);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-crimson: var(--accent-crimson);
+  --color-card: var(--card-bg);
+  --color-border-glow: rgba(0, 255, 0, 0.3);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-syne);
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased overflow-x-hidden pt-[60px] pl-[var(--sidebar-width)];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+  }
+
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+
+  .bg-mesh {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.05) 0%, transparent 60%),
+      radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(255, 0, 60, 0.05) 0%, transparent 40%);
+  }
+
+  .glass-card {
+    @apply bg-white border border-black/10 rounded-3xl shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .vertical-brand {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    @apply fixed left-0 top-0 bottom-0 w-[var(--sidebar-width)] flex items-center justify-center bg-white border-r border-black/10 z-[60] text-[10px] font-bold uppercase tracking-[0.5em] text-black/40;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}
+
+/* Custom stats counter animation trigger classes */
+.stat-counter {
+  @apply transition-all duration-700 ease-out translate-y-4 opacity-0;
+}
+
+.stat-counter.visible {
+  @apply translate-y-0 opacity-100;
+}
+
+/* Smooth Scrolling horizontal carousel */
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * (350px + 2rem) * 4));
+  }
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
