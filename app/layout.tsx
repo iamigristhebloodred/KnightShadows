@@ -1,20 +1,32 @@
-import type { Metadata } from "next";
-import { Syne, Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
 
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
+const spaceGrotesk = localFont({
+  src: './fonts/SpaceGrotesk-Variable.woff2',
+  variable: '--font-space-grotesk',
+  weight: '500 700',
+  display: 'swap',
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const inter = localFont({
+  src: './fonts/Inter-Variable.woff2',
+  variable: '--font-inter',
+  weight: '400 700',
+  display: 'swap',
+});
+
+const jetbrainsMono = localFont({
+  src: './fonts/JetBrainsMono-Variable.woff2',
+  variable: '--font-jetbrains-mono',
+  weight: '400 700',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Knight Shadows | Elite Open Source Contribution",
-  description: "A new era of open source, collaboration, and elite contribution. Join the Knight Shadows movement.",
+  title: 'KNIGHTSHADOWS — High-Performance Rust Developer Tooling',
+  description:
+    'KnightShadows builds fast, deterministic, local-first developer tools in Rust: Beru (C++ package manager), beru_index (223+ C++ recipes), and tuipdf (offline TUI PDF optimizer).',
 };
 
 export default function RootLayout({
@@ -23,20 +35,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('ks-theme');
+                  if (saved === 'dark') document.documentElement.classList.add('dark');
+                } catch (e) {}
+              })();
+            `,
+          }}
         />
       </head>
       <body
-        className={`${syne.variable} ${inter.variable} font-sans antialiased bg-[#0a0a0a] text-white selection:bg-cyan-500/30`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} min-h-screen font-sans`}
       >
         {children}
       </body>
     </html>
-
   );
 }
-

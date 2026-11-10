@@ -1,33 +1,25 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Stats from '@/components/Stats';
-import Features from '@/components/Features';
-import Timeline from '@/components/Timeline';
-import Governance from '@/components/Governance';
-import Testimonials from '@/components/Testimonials';
-import Sponsors from '@/components/Sponsors';
-import News from '@/components/News';
-import CTA from '@/components/CTA';
+import ProductShowcase from '@/components/ProductShowcase';
+import ArchitectureSlider from '@/components/ArchitectureSlider';
+import OpenSourceSection from '@/components/OpenSourceSection';
+import ReleasesSection from '@/components/ReleasesSection';
+import PreFooterCTA from '@/components/PreFooterCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen bg-[var(--ks-bg)] text-[var(--ks-text)]">
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Stats />
-      <Features />
-      <Timeline />
-      <Governance />
-      <Testimonials />
-      <News />
-      <Sponsors />
-      <CTA />
+      <main>
+        <Hero />
+        <ProductShowcase />
+        <ArchitectureSlider />
+        <OpenSourceSection />
+        <ReleasesSection />
+      </main>
+      <PreFooterCTA />
       <Footer />
-    </main>
+    </div>
   );
 }

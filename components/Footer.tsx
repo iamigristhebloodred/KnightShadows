@@ -1,61 +1,108 @@
-'use client';
-
 import Link from 'next/link';
+import { GitHubIcon, KnightLogo } from './Icons';
+import { ORG_INFO } from '@/lib/data';
 
 export default function Footer() {
-    const footerLinks = [
-        { title: 'Program', links: [{ name: 'How it works', href: '#' }, { name: 'Timeline', href: '#timeline' }, { name: 'FAQ', href: '#' }] },
-        { title: 'Governance', links: [{ name: 'Foundation', href: '#governance' }, { name: 'Leadership', href: '#' }, { name: 'Bylaws', href: '#' }, { name: 'Code of Conduct', href: '#' }] },
-        { title: 'Projects', links: [{ name: 'All Projects', href: '#projects' }, { name: 'Incubator', href: '#' }, { name: 'Security', href: '#' }, { name: 'Documentation', href: '#' }] },
-        { title: 'Community', links: [{ name: 'Discord', href: 'https://discord.gg/7SVve8wkm' }, { name: 'GitHub', href: 'https://github.com/KnightShadows' }, { name: 'Sponsorship', href: '#sponsors' }] },
-    ];
+  return (
+    <footer className="border-t border-[var(--ks-border)] bg-[var(--ks-bg)] py-14 text-[var(--ks-text)]">
+      <div className="ks-container">
+        <div className="grid gap-10 md:grid-cols-12 items-start">
+          {/* Compact navigation grid */}
+          <ul className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4">
+            <li>
+              <Link
+                href="/products/beru"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                Beru
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/products/tuipdf"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                tuipdf
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/products/beru-index"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                beru_index
+              </Link>
+            </li>
+            <li>
+              <a
+                href={ORG_INFO.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                Organization
+              </Link>
+            </li>
+            <li>
+              <a
+                href="https://github.com/KnightShadows/beru/releases"
+                target="_blank"
+                rel="noreferrer"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                Releases
+              </a>
+            </li>
+          </ul>
 
-    return (
-        <footer className="bg-white border-t border-black/10 py-24">
-            <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-4 gap-12 mb-20">
-                    {/* Logo & Info */}
-                    <div className="flex flex-col gap-6">
-                        <Link href="/" className="text-2xl font-mono font-bold text-black flex items-center gap-2">
-                            <span className="w-10 h-10 bg-accent-green rounded-xl flex items-center justify-center text-black text-sm">KS</span>
-                            Knight Shadows
-                        </Link>
-                        <p className="text-sm text-black/60 font-medium leading-relaxed">
-                            Knight Shadows is a global organization dedicated to elite open source contribution and building secure digital infrastructure.
-                        </p>
-                    </div>
-
-                    {/* Map Links */}
-                    {footerLinks.map((column) => (
-                        <div key={column.title} className="flex flex-col gap-8">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/40">{column.title}</span>
-                            <div className="flex flex-col gap-4">
-                                {column.links.map((link) => (
-                                    <Link key={link.name} href={link.href} className="text-sm font-bold text-black/80 hover:text-accent-green transition-colors transition-all">
-                                        {link.name}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Bottom Bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-black/5 gap-8">
-                    <div className="flex flex-wrap items-center gap-8">
-                        <span className="text-xs font-bold text-black/40 uppercase tracking-widest">© 2026 Knight Shadows</span>
-                        <Link href="#" className="text-xs font-bold text-black/40 hover:text-black uppercase tracking-widest">Privacy</Link>
-                        <Link href="#" className="text-xs font-bold text-black/40 hover:text-black uppercase tracking-widest">Terms</Link>
-                        <Link href="#" className="text-xs font-bold text-black/40 hover:text-black uppercase tracking-widest">Trademarks</Link>
-                        <Link href="#" className="text-xs font-bold text-black/40 hover:text-black uppercase tracking-widest">Anti-Trust</Link>
-                    </div>
-                    <div className="flex items-center gap-6 text-black/40">
-                        <i className="fab fa-github hover:text-black transition-colors cursor-pointer text-xl"></i>
-                        <i className="fab fa-discord hover:text-black transition-colors cursor-pointer text-xl"></i>
-                        <i className="fab fa-twitter hover:text-black transition-colors cursor-pointer text-xl"></i>
-                    </div>
-                </div>
+          {/* Right Brand Emblem */}
+          <div className="md:col-span-5 flex flex-col md:items-end gap-3">
+            <div className="flex items-center gap-3">
+              <KnightLogo className="h-10 w-10 shrink-0" />
+              <span className="font-heading text-2xl font-bold uppercase tracking-[0.08em]">
+                KNIGHTSHADOWS
+              </span>
             </div>
-        </footer>
-    );
+            <p className="text-sm text-[var(--ks-text-secondary)] md:text-right max-w-sm">
+              High-performance developer tooling built in Rust — fast, deterministic, and local-first.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom Legal & GitHub Row */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-[var(--ks-border)] pt-8 sm:flex-row">
+          <div className="flex flex-wrap items-center gap-6">
+            <span className="font-mono text-xs font-medium uppercase tracking-wider text-[var(--ks-text-muted)]">
+              © 2026 KNIGHTSHADOWS · {ORG_INFO.location}
+            </span>
+            <Link
+              href="/about"
+              className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--ks-text-secondary)] underline underline-offset-4 hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+            >
+              About &amp; Licenses
+            </Link>
+          </div>
+
+          <a
+            href={ORG_INFO.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="KnightShadows GitHub"
+            className="inline-flex items-center gap-2 rounded-[5px] border border-[var(--ks-border)] px-3 py-1.5 font-mono text-xs font-semibold text-[var(--ks-text)] transition-colors hover:border-[#8E1EA2] hover:text-[#8E1EA2] dark:hover:border-[#98E8DE] dark:hover:text-[#98E8DE]"
+          >
+            <GitHubIcon className="h-4 w-4" />
+            <span>github.com/KnightShadows</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
 }
