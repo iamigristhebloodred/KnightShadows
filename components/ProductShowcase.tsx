@@ -47,7 +47,7 @@ export default function ProductShowcase() {
         </div>
 
         {/* Flagship Showcase Card: BERU */}
-        <div className="overflow-hidden rounded-[14px] border border-[#542177] bg-[#140721] text-[#FBF9FE] shadow-2xl">
+        <div className="overflow-hidden rounded-[14px] border border-[#542177] dark:border-[#612c94] bg-[#140721] text-[#FBF9FE] shadow-[0_24px_70px_-20px_rgba(84,33,119,0.55)]">
           {/* Geometric Top Header Strip (#542177 -> #8E1EA2 -> #D552A3) */}
           <div className="relative h-20 sm:h-24 w-full ks-dark-grid-pattern bg-gradient-to-r from-[#542177] via-[#8E1EA2] to-[#D552A3]">
             <div className="absolute bottom-0 left-0 flex h-8 w-full">
@@ -261,11 +261,11 @@ Success: All prerequisites are met!`}
         {/* Product 2 & 3 Grid: tuipdf & beru_index */}
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {/* TUIPDF Card */}
-          <article className="min-w-0 flex flex-col justify-between rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-mist)] p-6 sm:p-10 shadow-sm">
+          <article className="ks-card min-w-0 flex flex-col justify-between rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-mist)] p-6 sm:p-10 shadow-sm">
             <div>
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-[10px] bg-[#140721] text-[#D552A3]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-[10px] border border-[#542177] bg-[#140721] text-[#D552A3]">
                     <TuipdfIcon className="h-6 w-6" />
                   </span>
                   <div>
@@ -377,7 +377,7 @@ Success: All prerequisites are met!`}
           </article>
 
           {/* BERU_INDEX Card */}
-          <article className="min-w-0 flex flex-col justify-between rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-mist)] p-6 sm:p-10 shadow-sm">
+          <article className="ks-card min-w-0 flex flex-col justify-between rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-mist)] p-6 sm:p-10 shadow-sm">
             <div>
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">

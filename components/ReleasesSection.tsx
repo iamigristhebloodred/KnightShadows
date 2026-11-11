@@ -31,7 +31,7 @@ export default function ReleasesSection() {
           <div className="lg:col-span-7">
             <Link
               href={featured.slug}
-              className="group block overflow-hidden rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-surface)] transition-all hover:border-[#8E1EA2] dark:hover:border-[#98E8DE] hover:shadow-xl"
+              className="ks-card group block overflow-hidden rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-surface)]"
             >
               <div className="relative flex h-[240px] sm:h-[320px] items-center justify-center bg-gradient-to-br from-[#140721] via-[#542177] to-[#8E1EA2] ks-dark-grid-pattern p-8">
                 <div className="flex flex-col items-center gap-4 text-center">
@@ -69,12 +69,12 @@ export default function ReleasesSection() {
               <Link
                 key={item.title}
                 href={item.slug}
-                className="group flex-1 overflow-hidden rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-surface)] transition-all hover:border-[#8E1EA2] dark:hover:border-[#98E8DE] hover:shadow-lg"
+                className="ks-card group flex-1 overflow-hidden rounded-[14px] border border-[var(--ks-border)] bg-[var(--ks-surface)]"
               >
                 <div className="relative flex h-[150px] items-center justify-between bg-[var(--ks-mist)] px-7">
                   <div className="flex items-center gap-3">
                     <span
-                      className={`flex h-12 w-12 items-center justify-center rounded-[10px] ${
+                      className={`flex h-12 w-12 items-center justify-center rounded-[10px] border border-[#542177] ${
                         idx === 0 ? 'bg-[#140721] text-[#D552A3]' : 'bg-[#542177] text-[#98E8DE]'
                       }`}
                     >

@@ -15,8 +15,10 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[var(--ks-mist)] pt-[116px] lg:pt-[132px] text-[var(--ks-text)]">
-      {/* Subtle architectural coordinate grid + KnightShadows emblem watermark */}
+      {/* Subtle architectural coordinate grid + atmospheric glow + KnightShadows emblem watermark */}
       <div className="pointer-events-none absolute inset-0 ks-grid-pattern opacity-80" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-10%,rgba(142,30,162,0.14),transparent_65%)] dark:bg-[radial-gradient(ellipse_80%_55%_at_50%_-10%,rgba(142,30,162,0.28),transparent_65%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-[52%] h-72 w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#98E8DE]/10 blur-3xl opacity-0 dark:opacity-100" />
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
         <KnightLogo
           monochrome
@@ -24,12 +26,12 @@ export default function Hero() {
         />
       </div>
 
-      <div className="ks-container relative z-10 flex min-h-[78vh] w-full min-w-0 flex-col items-center justify-center py-12 sm:py-16 lg:py-22 text-center">
+      <div className="ks-container relative z-10 flex min-h-[560px] lg:min-h-[640px] w-full min-w-0 flex-col items-center justify-center py-12 sm:py-16 lg:py-20 text-center">
         {/* High-contrast eyebrow pill */}
-        <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--ks-border-strong)] bg-[var(--ks-surface)] px-3.5 py-1.5 shadow-sm">
+        <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-[var(--ks-border-strong)] bg-[var(--ks-surface)]/90 px-4 py-1.5 backdrop-blur shadow-sm">
           <span className="h-2 w-2 shrink-0 rounded-full bg-[#8E1EA2] dark:bg-[#98E8DE]" />
           <span className="ks-subtitle text-[var(--ks-text)]">
-            Rust-Powered Open Source Tooling
+            Rust-Powered Open Source Organization
           </span>
         </div>
 
@@ -65,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* Interactive Quick Install Console */}
-        <div className="mt-10 w-full max-w-2xl min-w-0 rounded-[12px] border border-[var(--ks-border-strong)] bg-[var(--ks-surface)] p-4 sm:p-5 shadow-lg">
+        <div className="mt-10 w-full max-w-2xl min-w-0 rounded-[14px] border border-[var(--ks-border-strong)] bg-[var(--ks-surface)]/90 p-4 sm:p-5 backdrop-blur-md shadow-[0_20px_50px_-15px_rgba(84,33,119,0.22)] dark:shadow-[0_24px_65px_-15px_rgba(152,232,222,0.14)]">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-1.5 rounded-[6px] bg-[var(--ks-mist)] p-1">
               {(['beru', 'tuipdf'] as const).map((toolKey) => (
@@ -124,7 +126,7 @@ export default function Hero() {
         <div className="mt-8 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
           <Link
             href="/products/beru"
-            className="group flex items-center gap-3 rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:border-[#8E1EA2] dark:hover:border-[#98E8DE] shadow-sm"
+            className="ks-card group flex items-center gap-3 rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-4 py-3 text-left shadow-sm"
           >
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[7px] bg-[#542177] text-[#98E8DE]">
               <BeruIcon className="h-4 w-4" />
@@ -140,9 +142,9 @@ export default function Hero() {
 
           <Link
             href="/products/tuipdf"
-            className="group flex items-center gap-3 rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:border-[#8E1EA2] dark:hover:border-[#98E8DE] shadow-sm"
+            className="ks-card group flex items-center gap-3 rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-4 py-3 text-left shadow-sm"
           >
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[7px] bg-[#140721] text-[#D552A3]">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[7px] border border-[#542177] bg-[#140721] text-[#D552A3]">
               <TuipdfIcon className="h-4 w-4" />
             </span>
             <div className="min-w-0">
@@ -156,7 +158,7 @@ export default function Hero() {
 
           <Link
             href="/products/beru-index"
-            className="group flex items-center gap-3 rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:border-[#8E1EA2] dark:hover:border-[#98E8DE] shadow-sm"
+            className="ks-card group flex items-center gap-3 rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-4 py-3 text-left shadow-sm"
           >
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[7px] bg-[#8E1EA2] text-white">
               <IndexIcon className="h-4 w-4" />

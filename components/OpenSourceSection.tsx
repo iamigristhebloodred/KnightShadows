@@ -83,29 +83,34 @@ export default function OpenSourceSection() {
             </Link>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-5">
             {CONTRIBUTORS.map((person, idx) => (
               <div
                 key={person.name}
-                className="flex items-center gap-3 rounded-[10px] border border-[#542177] bg-[#1E0C31] px-4 py-3.5 transition-colors hover:border-[#98E8DE]"
+                className="flex flex-col justify-between gap-3 rounded-[10px] border border-[#542177] bg-[#1E0C31]/90 p-4 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#98E8DE] hover:shadow-[0_12px_28px_-12px_rgba(152,232,222,0.2)]"
               >
-                <span
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-mono text-xs font-bold ${
-                    idx % 2 === 0
-                      ? 'bg-[#542177] text-[#98E8DE]'
-                      : 'bg-[#281042] text-[#D552A3]'
-                  }`}
-                >
-                  {person.initials}
-                </span>
-                <div className="min-w-0">
-                  <div className="truncate font-heading text-sm font-bold text-white">
-                    {person.name}
-                  </div>
-                  <div className="truncate font-mono text-[11px] font-medium text-[#98E8DE]">
-                    {person.title}
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border font-mono text-xs font-bold ${
+                      idx % 2 === 0
+                        ? 'border-[#8E1EA2] bg-[#542177] text-[#98E8DE]'
+                        : 'border-[#542177] bg-[#281042] text-[#D552A3]'
+                    }`}
+                  >
+                    {person.initials}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="truncate font-heading text-sm font-bold text-white">
+                      {person.name}
+                    </div>
+                    <div className="truncate font-mono text-[11px] font-medium text-[#98E8DE]">
+                      {person.title}
+                    </div>
                   </div>
                 </div>
+                <p className="border-t border-[#542177]/60 pt-2.5 text-[11px] leading-relaxed text-[#DFD3EE]">
+                  {person.focus}
+                </p>
               </div>
             ))}
           </div>

@@ -58,8 +58,8 @@ export default function Navbar() {
         <div
           className={`flex h-16 lg:h-[76px] w-full items-center border-b transition-all duration-200 ${
             scrolled
-              ? 'border-[var(--ks-border)] bg-[var(--ks-bg)] shadow-sm'
-              : 'border-[var(--ks-border)]/50 bg-[var(--ks-mist)]/95 dark:bg-[var(--ks-bg)]/95 backdrop-blur-md'
+              ? 'border-[var(--ks-border)] bg-[var(--ks-bg)]/88 backdrop-blur-xl shadow-md'
+              : 'border-[var(--ks-border)]/50 bg-[var(--ks-mist)]/88 dark:bg-[var(--ks-bg)]/85 backdrop-blur-lg'
           }`}
         >
           <div className="ks-container flex min-w-0 items-center justify-between gap-2 sm:gap-4">

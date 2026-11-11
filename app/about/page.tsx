@@ -84,7 +84,7 @@ export default function AboutPage() {
               {PRINCIPLES.map((item) => (
                 <div
                   key={item.code}
-                  className="rounded-[12px] border border-[var(--ks-border)] bg-[var(--ks-surface)] p-7 shadow-sm"
+                  className="ks-card rounded-[12px] border border-[var(--ks-border)] bg-[var(--ks-surface)] p-7 shadow-sm"
                 >
                   <span className="font-mono text-sm font-bold text-[#8E1EA2] dark:text-[#98E8DE]">{item.code}</span>
                   <h3 className="mt-3 font-heading text-xl font-bold text-[var(--ks-text)]">{item.title}</h3>
@@ -107,11 +107,11 @@ export default function AboutPage() {
               {CONTRIBUTORS.map((member, idx) => (
                 <div
                   key={member.name}
-                  className="flex flex-col justify-between rounded-[12px] border border-[var(--ks-border)] bg-[var(--ks-surface)] p-6 shadow-sm"
+                  className="ks-card flex flex-col justify-between rounded-[12px] border border-[var(--ks-border)] bg-[var(--ks-surface)] p-6 shadow-sm"
                 >
                   <div>
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-full font-mono text-sm font-bold ${
+                      className={`flex h-12 w-12 items-center justify-center rounded-full border border-[#542177] font-mono text-sm font-bold ${
                         idx % 2 === 0
                           ? 'bg-[#542177] text-[#98E8DE]'
                           : 'bg-[#140721] text-[#D552A3]'
