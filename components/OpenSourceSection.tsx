@@ -70,10 +70,10 @@ export default function OpenSourceSection() {
           </div>
         </div>
 
-        {/* Organization Contributors Row */}
+        {/* Organization Members Row */}
         <div className="mt-14 border-t border-[#542177] pt-10">
           <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <span className="ks-subtitle text-[#98E8DE]">Core Contributors</span>
+            <span className="ks-subtitle text-[#98E8DE]">Organization Members</span>
             <Link
               href="/about#contributors"
               className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#D552A3] hover:text-[#98E8DE] transition-colors"
@@ -89,28 +89,41 @@ export default function OpenSourceSection() {
                 key={person.name}
                 className="flex flex-col justify-between gap-3 rounded-[10px] border border-[#542177] bg-[#1E0C31]/90 p-4 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[#98E8DE] hover:shadow-[0_12px_28px_-12px_rgba(152,232,222,0.2)]"
               >
-                <div className="flex items-center gap-3">
-                  <span
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border font-mono text-xs font-bold ${
-                      idx % 2 === 0
-                        ? 'border-[#8E1EA2] bg-[#542177] text-[#98E8DE]'
-                        : 'border-[#542177] bg-[#281042] text-[#D552A3]'
-                    }`}
-                  >
-                    {person.initials}
-                  </span>
-                  <div className="min-w-0">
-                    <div className="truncate font-heading text-sm font-bold text-white">
-                      {person.name}
-                    </div>
-                    <div className="truncate font-mono text-[11px] font-medium text-[#98E8DE]">
-                      {person.title}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border font-mono text-xs font-bold ${
+                        idx % 2 === 0
+                          ? 'border-[#8E1EA2] bg-[#542177] text-[#98E8DE]'
+                          : 'border-[#542177] bg-[#281042] text-[#D552A3]'
+                      }`}
+                    >
+                      {person.initials}
+                    </span>
+                    <div className="min-w-0">
+                      <div className="truncate font-heading text-sm font-bold text-white">
+                        {person.name}
+                      </div>
+                      <div className="truncate font-mono text-[11px] font-medium text-[#98E8DE]">
+                        {person.title}
+                      </div>
                     </div>
                   </div>
+                  <p className="text-[11px] leading-relaxed text-[#DFD3EE]">
+                    {person.focus}
+                  </p>
                 </div>
-                <p className="border-t border-[#542177]/60 pt-2.5 text-[11px] leading-relaxed text-[#DFD3EE]">
-                  {person.focus}
-                </p>
+
+                {person.tenure && (
+                  <div className="flex items-center gap-2 border-t border-[#542177]/60 pt-2.5 font-mono text-[11px] text-[#E4D8F2]">
+                    <span
+                      className={`h-1.5 w-1.5 shrink-0 rounded-full ${
+                        person.active ? 'bg-[#98E8DE]' : 'bg-[#D552A3]'
+                      }`}
+                    />
+                    <span>{person.tenure}</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>

@@ -26,8 +26,10 @@ export interface Product {
 
 export interface Contributor {
   name: string;
-  title: string;
+  title: 'Founder' | 'Co-Founder' | 'Core Member';
   initials: string;
+  tenure: string;
+  active: boolean;
   focus: string;
 }
 
@@ -36,7 +38,7 @@ export const ORG_INFO = {
   displayName: 'KnightShadows',
   tagline: 'High-performance, local-first developer tools built in Rust.',
   location: 'India',
-  createdYear: '2026',
+  createdYear: '2025',
   githubUrl: 'https://github.com/KnightShadows',
   repos: {
     beru: 'https://github.com/KnightShadows/beru',
@@ -48,32 +50,42 @@ export const ORG_INFO = {
 export const CONTRIBUTORS: Contributor[] = [
   {
     name: 'Igris',
-    title: 'Founder & Project Lead',
+    title: 'Founder',
     initials: 'IG',
+    tenure: '2025 Jan – Present',
+    active: true,
     focus: 'Organization Leadership & Vision',
   },
   {
     name: 'Aditya Anand',
-    title: 'Core Maintainer',
+    title: 'Co-Founder',
     initials: 'AA',
+    tenure: '2025 Jan – Present',
+    active: true,
     focus: 'Beru, tuipdf & beru_index',
   },
   {
     name: 'Anmol Sinha',
-    title: 'Core Contributor',
+    title: 'Core Member',
     initials: 'AS',
+    tenure: '2025 Jan – Present',
+    active: true,
     focus: 'Systems & Ecosystem Tooling',
   },
   {
     name: 'Nitin Kumar',
-    title: 'Technical Lead',
+    title: 'Core Member',
     initials: 'NK',
+    tenure: '2025 Jan – 2026 Jan',
+    active: false,
     focus: 'Architecture & Security',
   },
   {
     name: 'Krisita Chhetry',
-    title: 'Design Director',
+    title: 'Core Member',
     initials: 'KC',
+    tenure: '',
+    active: false,
     focus: 'Design Systems & User Experience',
   },
 ];

@@ -95,12 +95,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Core Contributors */}
+        {/* Organization Members */}
         <section id="contributors" className="bg-[var(--ks-mist)] py-16 lg:py-24">
           <div className="ks-container">
             <span className="ks-subtitle text-[#8E1EA2] dark:text-[#98E8DE]">People Behind KnightShadows</span>
             <h2 className="mt-2 font-heading text-3xl font-bold text-[var(--ks-text)] sm:text-4xl">
-              Organization Contributors
+              Organization Members
             </h2>
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
@@ -122,9 +122,25 @@ export default function AboutPage() {
                     <h3 className="mt-4 font-heading text-xl font-bold text-[var(--ks-text)]">
                       {member.name}
                     </h3>
-                    <span className="mt-1.5 inline-block rounded bg-[#98E8DE] px-2.5 py-0.5 font-mono text-[11px] font-bold text-[#140721]">
+                    <span
+                      className={`mt-1.5 inline-block rounded px-2.5 py-0.5 font-mono text-[11px] font-bold ${
+                        member.title === 'Core Member'
+                          ? 'border border-[var(--ks-border-strong)] bg-[var(--ks-mist)] text-[#542177] dark:text-[#98E8DE]'
+                          : 'bg-[#98E8DE] text-[#140721]'
+                      }`}
+                    >
                       {member.title}
                     </span>
+                    {member.tenure && (
+                      <div className="mt-3 flex items-center gap-2 font-mono text-[11px] font-medium text-[var(--ks-text-muted)]">
+                        <span
+                          className={`h-1.5 w-1.5 shrink-0 rounded-full ${
+                            member.active ? 'bg-[#8E1EA2] dark:bg-[#98E8DE]' : 'bg-[#D552A3]'
+                          }`}
+                        />
+                        <span>{member.tenure}</span>
+                      </div>
+                    )}
                   </div>
                   <p className="mt-4 border-t border-[var(--ks-border)] pt-3 text-xs font-medium text-[var(--ks-text-secondary)]">
                     {member.focus}
