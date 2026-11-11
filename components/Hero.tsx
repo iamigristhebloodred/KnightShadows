@@ -112,7 +112,7 @@ export default function Hero() {
               {activeProduct.name} {activeProduct.version} · {activeProduct.license}
             </span>
             <Link
-              href={activeProduct.href}
+              href={selectedTool === 'beru' ? '/docs/beru' : activeProduct.href}
               className="font-semibold text-[#8E1EA2] dark:text-[#98E8DE] hover:underline"
             >
               Read docs →

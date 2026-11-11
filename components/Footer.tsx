@@ -52,6 +52,14 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link
+                href="/docs/beru"
+                className="font-heading text-lg font-semibold uppercase tracking-wider text-[var(--ks-text)] transition-colors hover:text-[#8E1EA2] dark:hover:text-[#98E8DE]"
+              >
+                Beru Docs
+              </Link>
+            </li>
+            <li>
               <a
                 href="https://github.com/KnightShadows/beru/releases"
                 target="_blank"

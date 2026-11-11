@@ -16,6 +16,7 @@ import {
   TUIPDF_PIPELINE,
   TUIPDF_TIERS,
 } from '@/lib/data';
+import { BERU_PACKAGE_MAP } from '@/lib/beru-packages';
 
 export default function ProductShowcase() {
   const [beruTab, setBeruTab] = useState<'matrix' | 'manifest' | 'setup'>('matrix');
@@ -83,8 +84,15 @@ export default function ProductShowcase() {
 
               <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
                 <Link
-                  href="/products/beru"
+                  href="/docs/beru"
                   className="ks-btn bg-[#98E8DE] text-[#140721] hover:bg-white"
+                >
+                  <span>Read Docs</span>
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/products/beru"
+                  className="ks-btn border border-[#98E8DE]/60 bg-[#281042] text-[#98E8DE] hover:bg-[#98E8DE] hover:text-[#140721]"
                 >
                   <span>Learn more</span>
                   <ArrowRightIcon className="h-4 w-4" />
@@ -440,6 +448,15 @@ Success: All prerequisites are met!`}
                     </span>
                   )}
                 </div>
+
+                {BERU_PACKAGE_MAP[selectedPkg] && (
+                  <p className="mt-3 border-t border-[var(--ks-border)] pt-2.5 text-xs leading-relaxed text-[var(--ks-text-secondary)]">
+                    <span className="font-mono font-bold text-[#542177] dark:text-[#98E8DE]">
+                      {selectedPkg}:
+                    </span>{' '}
+                    {BERU_PACKAGE_MAP[selectedPkg].summary}
+                  </p>
+                )}
               </div>
             </div>
 

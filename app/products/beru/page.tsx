@@ -49,16 +49,13 @@ export default function BeruPage() {
                 </p>
 
                 <div className="flex flex-wrap gap-3 pt-2">
-                  <a
-                    href={beru.repoUrl}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    href="/docs/beru"
                     className="ks-btn bg-[#542177] text-white hover:bg-[#8E1EA2] dark:bg-[#98E8DE] dark:text-[#140721]"
                   >
-                    <GitHubIcon className="h-4 w-4" />
-                    <span>View Repository</span>
-                    <ExternalLinkIcon className="h-4 w-4" />
-                  </a>
+                    <span>Read Full Docs</span>
+                    <ArrowRightIcon className="h-4 w-4" />
+                  </Link>
                   <Link
                     href="/products/beru-index"
                     className="ks-btn border-2 border-[#542177] bg-transparent text-[#542177] hover:bg-[#542177] hover:text-white dark:border-[#98E8DE] dark:text-white dark:hover:bg-[#98E8DE] dark:hover:text-[#140721]"
@@ -66,6 +63,16 @@ export default function BeruPage() {
                     <span>Browse 223+ Recipes</span>
                     <ArrowRightIcon className="h-4 w-4" />
                   </Link>
+                  <a
+                    href={beru.repoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ks-btn border border-[var(--ks-border-strong)] bg-[var(--ks-surface)] text-[var(--ks-text)] hover:border-[#8E1EA2] dark:hover:border-[#98E8DE]"
+                  >
+                    <GitHubIcon className="h-4 w-4" />
+                    <span>View Repository</span>
+                    <ExternalLinkIcon className="h-4 w-4" />
+                  </a>
                 </div>
               </div>
 

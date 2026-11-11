@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   BeruIcon,
   ChevronDownIcon,
@@ -17,6 +18,8 @@ import {
 import { ORG_INFO } from '@/lib/data';
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isDocsRoute = pathname?.startsWith('/docs');
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<'products' | 'docs' | null>(null);
@@ -179,16 +182,37 @@ export default function Navbar() {
                   </button>
 
                   {openMenu === 'docs' && (
-                    <div className="absolute left-0 top-full pt-2 w-[260px]">
+                    <div className="absolute left-0 top-full pt-2 w-[280px]">
                       <div className="rounded-[10px] border border-[var(--ks-border)] bg-[var(--ks-surface)] p-2 shadow-xl space-y-1">
-                        <a
-                          href="https://github.com/KnightShadows/beru/tree/main/docs"
-                          target="_blank"
-                          rel="noreferrer"
+                        <Link
+                          href="/docs/beru"
+                          onClick={() => setOpenMenu(null)}
+                          className="block rounded-[6px] px-3 py-2 text-xs font-semibold text-[#542177] dark:text-[#98E8DE] hover:bg-[var(--ks-mist)]"
+                        >
+                          The Beru Book — Overview →
+                        </Link>
+                        <Link
+                          href="/docs/beru/getting-started"
+                          onClick={() => setOpenMenu(null)}
                           className="block rounded-[6px] px-3 py-2 text-xs font-semibold text-[var(--ks-text)] hover:bg-[var(--ks-mist)]"
                         >
-                          The Beru Book (GitHub Docs) ↗
-                        </a>
+                          Getting Started Guide
+                        </Link>
+                        <Link
+                          href="/docs/beru/reference-manifest-berutoml"
+                          onClick={() => setOpenMenu(null)}
+                          className="block rounded-[6px] px-3 py-2 text-xs font-semibold text-[var(--ks-text)] hover:bg-[var(--ks-mist)]"
+                        >
+                          Beru.toml Manifest Reference
+                        </Link>
+                        <Link
+                          href="/docs/beru/reference-cli"
+                          onClick={() => setOpenMenu(null)}
+                          className="block rounded-[6px] px-3 py-2 text-xs font-semibold text-[var(--ks-text)] hover:bg-[var(--ks-mist)]"
+                        >
+                          CLI Command Reference
+                        </Link>
+                        <div className="my-1 h-px bg-[var(--ks-border)]" />
                         <a
                           href="https://github.com/KnightShadows/tuipdf#readme"
                           target="_blank"
@@ -288,6 +312,17 @@ export default function Navbar() {
                 beru_index — 223+ C++ Recipes
               </Link>
               <div className="my-2 h-px bg-[var(--ks-border)]" />
+              <span className="ks-subtitle text-[var(--ks-text-muted)]">Documentation</span>
+              <Link href="/docs/beru" onClick={() => setMobileOpen(false)} className="rounded-[6px] px-3 py-2 font-heading text-base font-bold text-[#542177] dark:text-[#98E8DE] hover:bg-[var(--ks-mist)]">
+                The Beru Book — Docs
+              </Link>
+              <Link href="/docs/beru/getting-started" onClick={() => setMobileOpen(false)} className="rounded-[6px] px-3 py-2 font-heading text-sm font-semibold text-[var(--ks-text)] hover:bg-[var(--ks-mist)]">
+                Getting Started
+              </Link>
+              <Link href="/docs/beru/reference-cli" onClick={() => setMobileOpen(false)} className="rounded-[6px] px-3 py-2 font-heading text-sm font-semibold text-[var(--ks-text)] hover:bg-[var(--ks-mist)]">
+                CLI Reference
+              </Link>
+              <div className="my-2 h-px bg-[var(--ks-border)]" />
               <Link href="/about" onClick={() => setMobileOpen(false)} className="rounded-[6px] px-3 py-2 font-heading text-base font-bold text-[var(--ks-text)] hover:bg-[var(--ks-mist)]">
                 Organization
               </Link>
@@ -301,22 +336,24 @@ export default function Navbar() {
       </header>
 
       {/* Floating Bottom-Left Org Pill */}
-      <a
-        href={ORG_INFO.githubUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="KnightShadows GitHub Organization"
-        className="group fixed bottom-5 left-5 z-40 hidden lg:flex items-center gap-2.5 rounded-[8px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-2.5 py-2 shadow-md backdrop-blur transition-all hover:border-[#8E1EA2] dark:hover:border-[#98E8DE]"
-      >
-        <span className="flex h-6 w-6 items-center justify-center rounded-[5px] bg-[#542177] font-mono text-[11px] font-bold text-[#98E8DE]">
-          KS
-        </span>
-        <span className="h-4 w-px bg-[var(--ks-border)]" />
-        <GitHubIcon className="h-4 w-4 text-[var(--ks-text)]" />
-        <span className="pr-1 font-mono text-xs font-semibold text-[var(--ks-text)]">
-          KnightShadows
-        </span>
-      </a>
+      {!isDocsRoute && (
+        <a
+          href={ORG_INFO.githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="KnightShadows GitHub Organization"
+          className="group fixed bottom-5 left-5 z-40 hidden lg:flex items-center gap-2.5 rounded-[8px] border border-[var(--ks-border)] bg-[var(--ks-surface)]/95 px-2.5 py-2 shadow-md backdrop-blur transition-all hover:border-[#8E1EA2] dark:hover:border-[#98E8DE]"
+        >
+          <span className="flex h-6 w-6 items-center justify-center rounded-[5px] bg-[#542177] font-mono text-[11px] font-bold text-[#98E8DE]">
+            KS
+          </span>
+          <span className="h-4 w-px bg-[var(--ks-border)]" />
+          <GitHubIcon className="h-4 w-4 text-[var(--ks-text)]" />
+          <span className="pr-1 font-mono text-xs font-semibold text-[var(--ks-text)]">
+            KnightShadows
+          </span>
+        </a>
+      )}
     </>
   );
 }

@@ -1,3 +1,8 @@
+import {
+  BERU_PACKAGE_CATALOG,
+  BERU_PACKAGE_CATEGORIES_ORDER,
+} from './beru-packages';
+
 export interface Product {
   id: 'beru' | 'beru-index' | 'tuipdf';
   slug: string;
@@ -266,44 +271,11 @@ export const RELEASES = [
   },
 ];
 
-export const BERU_INDEX_PACKAGES: string[] = [
-  'Wt-Auth', 'Wt-Dbo', 'abseil-cpp', 'allegro', 'alpaka', 'angelscript', 'any-lite', 'argon2',
-  'argparse', 'armadillo', 'asio', 'backward-cpp', 'bandit', 'bcrypt', 'benchmark', 'bit-lite',
-  'blaze', 'boost', 'boringssl', 'botan', 'brotli', 'byte-lite', 'bzip2', 'capnproto',
-  'cassandra-cpp-driver', 'catch2', 'celero', 'cereal', 'chaiscript', 'cli11', 'clipp', 'computecpp',
-  'cpp-base64', 'cpp-httplib', 'cppast', 'cppcms', 'cpprestsdk', 'cpptoml', 'cpr', 'crow',
-  'cryptopp', 'ctre', 'cuda', 'curl', 'cutelyst', 'cxxopts', 'date', 'dirent',
-  'doctest', 'drogon', 'duktape', 'easyloggingpp', 'eigen', 'entt', 'expected-lite', 'expected',
-  'flatbuffers', 'flecs', 'fmt', 'folly', 'ftxui', 'gflags', 'glfw', 'glm',
-  'glog', 'gmp', 'gnutls', 'googletest', 'grpc', 'gsl', 'hayai', 'hip',
-  'hiredis', 'hpx', 'httpi', 'httplib', 'imgui', 'indicators', 'inih', 'ixwebsocket',
-  'json', 'jsoncpp', 'kokkos', 'leveldb', 'libarchive', 'libclang', 'libconfig', 'libcpio',
-  'libgcrypt', 'libhv', 'liblzf', 'libsodium', 'libtar', 'libzip', 'lmdb', 'log4cxx',
-  'luabind', 'lz4', 'lzma', 'lzo', 'magic_enum', 'mbedtls', 'miniz', 'minizip',
-  'mongo-cxx-driver', 'mongoose', 'monocypher', 'mpfr', 'mpir', 'msgpack-cxx', 'mujs', 'mysql-connector-cpp',
-  'nameof', 'nanogui', 'nettle', 'nghttp2', 'nlohmann-json', 'nlohmann_json', 'nonius', 'nsimd',
-  'nss', 'nuklear', 'oatpp', 'observer-ptr-lite', 'opencl', 'opengl', 'openmp', 'openssl',
-  'optional-lite', 'optional', 'outcome', 'pegtl', 'pfr', 'pistache', 'plog', 'poco-crypto',
-  'poco-data-mysql', 'poco-data-odbc', 'poco-data-postgresql', 'poco-data-sqlite', 'poco-data', 'poco-foundation', 'poco-json', 'poco-mongodb',
-  'poco-net', 'poco-netssl', 'poco-redis', 'poco-util', 'poco-xml', 'poco', 'pqxx', 'protobuf',
-  'pugixml', 'pybind11', 'qcustomplot', 'qhttpengine', 'quill', 'qwt', 'raja', 'range-v3',
-  'rapidjson', 'raylib', 're2', 'redis-plus-plus', 'reflect-cpp', 'restbed', 'result', 'ring-span-lite',
-  'rocksdb', 'rttr', 'ryml', 's2n', 'sajson', 'scrypt', 'sdl', 'served',
-  'sfml', 'simdjson', 'simpleini', 'snappy', 'snowhouse', 'soci', 'sol2', 'span-lite',
-  'spdlog', 'sqlite3', 'sqlpp11', 'status-value', 'stduuid', 'string-view-lite', 'sycl', 'tabulate',
-  'tbb', 'tclap', 'tiny-aes', 'tinyxml2', 'tl-expected', 'tl-function-ref', 'tl-generator', 'tl-optional',
-  'tomlplusplus', 'treefrog', 'trompeloeil', 'tweetnacl', 'uWebSockets', 'unqlite', 'utf8h', 'v8',
-  'value-ptr-lite', 'variant-lite', 'vc', 'vulkan', 'websocketpp', 'wolfssl', 'wt', 'xsimd',
-  'xtensor', 'xxhash', 'xz', 'yaml-cpp', 'yyjson', 'zlib', 'zstd',
-];
+export const BERU_INDEX_PACKAGES: string[] = BERU_PACKAGE_CATALOG.map((pkg) => pkg.name);
 
-export const PACKAGE_CATEGORIES: Record<string, string[]> = {
-  'Core & Utilities': ['fmt', 'spdlog', 'abseil-cpp', 'boost', 'folly', 'magic_enum', 'cli11', 'cxxopts', 'argparse', 'tomlplusplus', 'yaml-cpp', 'range-v3'],
-  'JSON & Serialization': ['nlohmann-json', 'simdjson', 'rapidjson', 'yyjson', 'jsoncpp', 'protobuf', 'flatbuffers', 'capnproto', 'msgpack-cxx', 'cereal'],
-  'Networking & Web': ['asio', 'curl', 'cpr', 'drogon', 'crow', 'cpp-httplib', 'grpc', 'nghttp2', 'uWebSockets', 'ixwebsocket', 'oatpp'],
-  'Graphics & UI': ['imgui', 'raylib', 'sdl', 'sfml', 'glfw', 'glm', 'vulkan', 'opengl', 'ftxui', 'nanogui', 'allegro'],
-  'Crypto & Security': ['openssl', 'libsodium', 'boringssl', 'mbedtls', 'cryptopp', 'botan', 'argon2', 'wolfssl', 'monocypher'],
-  'Data & Compression': ['sqlite3', 'rocksdb', 'leveldb', 'lmdb', 'zstd', 'zlib', 'lz4', 'brotli', 'snappy', 'hiredis'],
-  'Math & Compute': ['eigen', 'xtensor', 'xsimd', 'armadillo', 'kokkos', 'tbb', 'cuda', 'opencl', 'mpfr'],
-  'Testing & Bench': ['googletest', 'catch2', 'doctest', 'benchmark', 'trompeloeil', 'celero', 'nonius'],
-};
+export const PACKAGE_CATEGORIES: Record<string, string[]> = Object.fromEntries(
+  BERU_PACKAGE_CATEGORIES_ORDER.map((category) => [
+    category,
+    BERU_PACKAGE_CATALOG.filter((pkg) => pkg.category === category).map((pkg) => pkg.name),
+  ])
+);
